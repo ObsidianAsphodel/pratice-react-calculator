@@ -1,0 +1,58 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+    /* takes away the default margins of the body and adds a linear gradient. */
+body{
+    margin: 0;
+    background: linear-gradient(to right, rgb(56, 108, 181), rgba(180, 38, 180, 0.903));
+}
+
+    /* class for the entire calculator grid */
+.calculator-grid{
+    /* creates the grid for the buttons */
+    display: grid;
+    margin-top: 2rem;
+    justify-content: center;
+    grid-template-columns: repeat(4, 6rem);
+    /* //allows the grid to grow for larger numbers */
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+}
+
+.span-two{
+    grid-column: span 2;
+}
+.calculator-grid > button{
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: antiquewhite;
+}
+
+/* when the button is being focused on an when it is being hovered over */
+.calculator-grid > button:hover,
+.calculator-grid > button:focus{
+    background-color: rgb(228, 214, 195);
+}
+.output{
+    grid-column: 1 / -1;
+    background-color: black;
+    opacity: 60%;
+    display: inline;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: .75rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand{
+    color: rgb(203, 203, 203);
+    font-size: 2.5rem;
+}
+.output .previous-operand{
+    color: white;
+    font-size: 2.5rem;
+}
